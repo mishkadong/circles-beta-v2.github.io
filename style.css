@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.area {
+  width: 100vw;
+  height: 100vh;
+}
+.box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px black;
+}
+.circle {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px black;
+}
