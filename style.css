@@ -1,14 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
-  width: 100vw;
-  height: 100vh;
-  user-select: none;
-}
-.box {
+  box-sizing: border-box; }
+
+.box, .box-2, .box-3 {
   padding: 5px;
   position: absolute;
   width: 70px;
@@ -16,69 +11,81 @@ body {
   background-color: white;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   border: 1px solid black;
-  box-shadow: 2px 2px 3px black;
-  transition: all 0.3s linear;
-}
-.box:hover:before {
-  content: "";
-  position: absolute;
-  top: 110%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0) 80%
-  );
-  animation: shadow 2.5s linear infinite;
-}
+  transition: all 0.2s linear; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  user-select: none; }
+
+.img {
+  max-width: 100%; }
+
+.box {
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 3px black; }
+  .box:hover {
+    animation: box 2.5s linear infinite; }
+    .box:hover:hover:before {
+      content: "";
+      position: absolute;
+      top: 110%;
+      left: 5%;
+      height: 10px;
+      width: 90%;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+      animation: shadow 2.5s linear infinite; }
+
 @keyframes shadow {
   50% {
     top: 130%;
     height: 15px;
     width: 120%;
-    left: -7%;
-  }
+    left: -7%; }
   100% {
-    top: 110%;
-  }
-}
-.box:hover {
-  animation: box 2.5s linear infinite;
-}
+    top: 110%; } }
 @keyframes box {
   50% {
-    transform: translate(-50%, -80%);
-  }
+    transform: translate(-50%, -80%); }
   100% {
-    transform: translate(-50%, -50%);
-  }
-}
-.img {
-  max-width: 100%;
-}
+    transform: translate(-50%, -50%); } }
+.box-2 {
+  transform: translate(-150%, -50%); }
+  .box-2:hover {
+    transform: translate(-150%, -50%) scale(1.2);
+    box-shadow: 5px 5px 10px #84888f, -5px -5px 10px #eae7e7; }
+  .box-2 ~ .prompt_box {
+    display: block;
+    opacity: 1;
+    visibility: visible; }
+
+.box-3 {
+  transform: translate(50%, -50%); }
+  .box-3:hover {
+    transform: translate(50%, -50%) scale(1.2);
+    box-shadow: 5px 5px 10px #84888f, -5px -5px 10px #eae7e7; }
+
 .circle {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: white;
   border: 1px solid black;
-  box-shadow: 1px 1px 2px black;
-}
+  box-shadow: 1px 1px 2px black; }
+
 .circle__pop {
   transform: scaleY(0.01);
-  transition: all 0.2s linear;
-}
+  transition: all 0.2s linear; }
+
 .circle__pop-all {
-  transform: scale(2);
+  transform: scale(1.7);
   opacity: 0.4;
-  transition: all 0.2s linear;
-}
-/* .display-none {
-  display: none;
-} */
+  transition: all 0.2s linear; }
+
+/*# sourceMappingURL=style.css.map */

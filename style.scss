@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$transition: all 0.2s linear;
+%box {
+  padding: 5px;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  border: 1px solid black;
+  transition: $transition;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+}
+.img {
+  max-width: 100%;
+}
+.box {
+  @extend %box;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 3px black;
+  &:hover {
+    animation: box 2.5s linear infinite;
+    &:hover:before {
+      content: "";
+      position: absolute;
+      top: 110%;
+      left: 5%;
+      height: 10px;
+      width: 90%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 80%
+      );
+      animation: shadow 2.5s linear infinite;
+    }
+  }
+}
+@keyframes shadow {
+  50% {
+    top: 130%;
+    height: 15px;
+    width: 120%;
+    left: -7%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+@keyframes box {
+  50% {
+    transform: translate(-50%, -80%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+.box-2 {
+  @extend %box;
+  transform: translate(-150%, -50%);
+  &:hover {
+    transform: translate(-150%, -50%) scale(1.2);
+    box-shadow: 5px 5px 10px rgb(132, 136, 143),
+      -5px -5px 10px rgb(234, 231, 231);
+  }
+  & ~ .prompt_box {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.box-3 {
+  @extend %box;
+  transform: translate(+50%, -50%);
+  &:hover {
+    transform: translate(+50%, -50%) scale(1.2);
+    box-shadow: 5px 5px 10px rgb(132, 136, 143),
+      -5px -5px 10px rgb(234, 231, 231);
+  }
+}
+.circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px black;
+}
+.circle__pop {
+  transform: scaleY(0.01);
+  transition: $transition;
+}
+.circle__pop-all {
+  transform: scale(1.7);
+  opacity: 0.4;
+  transition: $transition;
+}
