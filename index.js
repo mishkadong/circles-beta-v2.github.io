@@ -83,7 +83,7 @@ function pop_1(e) {
     setTimeout(() => {
       e.target.closest(".circle").remove();
     }, 200);
-    counter -= 4;
+    counter -= 6;
     scoreBoard.textContent = `пiдстрелено свинособак: ${++score}`;
     while (counter >= 200) {
       clearInterval(interval);
@@ -113,7 +113,7 @@ function popAll() {
   score += circles.length;
   circles.forEach((e) => e.classList.add("circle__pop-all"));
   setTimeout(() => circles.forEach((e) => e.remove()), 150);
-  area.addEventListener("click", () => console.log(123));
+  // area.addEventListener("click", () => console.log(123));
   boxEnd.hidden = false;
   scoreBoard.textContent = `ПЕРЕМОГА! Вбито та пiдiрвано свинособак: ${score}!`;
 } // pop all circles with animation
@@ -134,3 +134,4 @@ mode_1.addEventListener("click", () => {
 mode_2.addEventListener("click", theGame_2);
 
 boxEnd.addEventListener("click", () => location.reload());
+
